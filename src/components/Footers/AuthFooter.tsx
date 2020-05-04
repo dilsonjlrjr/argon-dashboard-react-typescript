@@ -16,7 +16,7 @@
 
 */
 /*eslint-disable*/
-import React from "react";
+import React, { Fragment } from "react";
 
 // reactstrap components
 import { NavItem, NavLink, Nav, Container, Row, Col } from "reactstrap";
@@ -24,7 +24,7 @@ import { NavItem, NavLink, Nav, Container, Row, Col } from "reactstrap";
 class Login extends React.Component {
   render() {
     return (
-      <>
+      <Fragment>
         <footer className="py-5">
           <Container>
             <Row className="align-items-center justify-content-xl-between">
@@ -79,7 +79,7 @@ class Login extends React.Component {
             </Row>
           </Container>
         </footer>
-      </>
+      </Fragment>
     );
   }
 }

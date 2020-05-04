@@ -179,7 +179,7 @@ Argon Dashboard React
     ├── layouts
     │   ├── Admin.jsx
     │   └── Auth.jsx
-    ├── routes.js
+    ├── routes.ts
     ├── variables
     │   └── charts.jsx
     └── views

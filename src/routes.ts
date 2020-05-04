@@ -23,8 +23,15 @@ import Login from "./views/examples/Login.js";
 import Tables from "./views/examples/Tables.js";
 import Icons from "./views/examples/Icons.js";
 
+interface RouteInterface {
+  path: string
+  name: string
+  icon: string
+  component: Object
+  layout: string
+}
 
-var routes = [
+let routes: Array<RouteInterface> = [
   {
     path: "/index",
     name: "Dashboard",

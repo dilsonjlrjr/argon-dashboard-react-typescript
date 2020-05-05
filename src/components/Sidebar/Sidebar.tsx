@@ -18,8 +18,6 @@
 /*eslint-disable*/
 import React from "react";
 import { NavLink as NavLinkRRD, Link } from "react-router-dom";
-// nodejs library to set properties for components
-import { PropTypes } from "prop-types";
 
 // reactstrap components
 import {
@@ -40,7 +38,6 @@ import {
   InputGroupText,
   InputGroup,
   Media,
-  NavbarBrand,
   Navbar,
   NavItem,
   NavLink,
@@ -49,42 +46,76 @@ import {
   Table,
   Container,
   Row,
-  Col
+  Col,
+  NavbarBrand,
 } from "reactstrap";
 
 var ps;
 
-class Sidebar extends React.Component {
-  state = {
-    collapseOpen: false
-  };
-  constructor(props) {
+interface LogoInterface {
+  outterLink: string;
+  innerLink: string;
+  imgAlt: string;
+  imgSrc: string;
+}
+
+interface RouteInterface {
+  path: string;
+  name: string;
+  icon: string;
+  component: JSX.Element;
+  layout: string;
+}
+
+interface PropsInterface {
+  location: any;
+  layout: string;
+  path: string;
+  icon: string;
+  bgColor: string;
+  logo: LogoInterface;
+  routes: Array<RouteInterface>;
+  name: string;
+}
+
+interface StateInterface {
+  collapseOpen: boolean;
+}
+
+class Sidebar extends React.Component<PropsInterface, StateInterface> {
+  state: StateInterface;
+
+  constructor(props: PropsInterface) {
     super(props);
     this.activeRoute.bind(this);
+
+    this.state = {
+      collapseOpen: false,
+    };
   }
   // verifies if routeName is the one active (in browser input)
-  activeRoute(routeName) {
+  activeRoute(routeName: String) {
     return this.props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
   }
   // toggles collapse between opened and closed (true/false)
   toggleCollapse = () => {
     this.setState({
-      collapseOpen: !this.state.collapseOpen
+      collapseOpen: !this.state.collapseOpen,
     });
   };
   // closes the collapse
   closeCollapse = () => {
     this.setState({
-      collapseOpen: false
+      collapseOpen: false,
     });
   };
   // creates the links that appear in the left menu / Sidebar
-  createLinks = routes => {
-    return routes.map((prop, key) => {
+  createLinks: any = (routes: Array<RouteInterface>) => {
+    return routes.map((prop: RouteInterface, key) => {
       return (
         <NavItem key={key}>
           <NavLink
-            to={prop.layout + prop.path}
+            to={prop.layout.concat(prop.path.toString())}
             tag={NavLinkRRD}
             onClick={this.closeCollapse}
             activeClassName="active"
@@ -96,20 +127,23 @@ class Sidebar extends React.Component {
       );
     });
   };
+
   render() {
-    const { bgColor, routes, logo } = this.props;
+    let { bgColor, routes, logo } = this.props;
+
     let navbarBrandProps;
     if (logo && logo.innerLink) {
       navbarBrandProps = {
         to: logo.innerLink,
-        tag: Link
+        tag: Link,
       };
     } else if (logo && logo.outterLink) {
       navbarBrandProps = {
         href: logo.outterLink,
-        target: "_blank"
+        target: "_blank",
       };
     }
+
     return (
       <Navbar
         className="navbar-vertical fixed-left navbar-light bg-white"
@@ -126,7 +160,7 @@ class Sidebar extends React.Component {
             <span className="navbar-toggler-icon" />
           </button>
           {/* Brand */}
-          {logo ? (
+          {(logo) ? (
             <NavbarBrand className="pt-0" {...navbarBrandProps}>
               <img
                 alt={logo.imgAlt}
@@ -184,7 +218,7 @@ class Sidebar extends React.Component {
                   <span>Support</span>
                 </DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem href="#pablo" onClick={e => e.preventDefault()}>
+                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
                   <i className="ni ni-user-run" />
                   <span>Logout</span>
                 </DropdownItem>
@@ -278,26 +312,5 @@ class Sidebar extends React.Component {
     );
   }
 }
-
-Sidebar.defaultProps = {
-  routes: [{}]
-};
-
-Sidebar.propTypes = {
-  // links that will be displayed inside the component
-  routes: PropTypes.arrayOf(PropTypes.object),
-  logo: PropTypes.shape({
-    // innerLink is for links that will direct the user within the app
-    // it will be rendered as <Link to="...">...</Link> tag
-    innerLink: PropTypes.string,
-    // outterLink is for links that will direct the user outside the app
-    // it will be rendered as simple <a href="...">...</a> tag
-    outterLink: PropTypes.string,
-    // the image src of the logo
-    imgSrc: PropTypes.string.isRequired,
-    // the alt for the img
-    imgAlt: PropTypes.string.isRequired
-  })
-};
 
 export default Sidebar;

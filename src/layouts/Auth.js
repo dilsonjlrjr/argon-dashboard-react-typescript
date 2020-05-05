@@ -21,7 +21,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 
 // core components
-import AuthNavbar from "../components/Navbars/AuthNavbar.js";
+import AuthNavbar from "../components/Navbars/AuthNavbar";
 import AuthFooter from "../components/Footers/AuthFooter";
 
 import routes from "routes.ts";

@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 // reactstrap components
 import {
@@ -33,7 +33,7 @@ import {
 class AdminNavbar extends React.Component {
   render() {
     return (
-      <>
+      <Fragment>
         <Navbar
           className="navbar-top navbar-horizontal navbar-dark"
           expand="md"
@@ -108,7 +108,7 @@ class AdminNavbar extends React.Component {
             </UncontrolledCollapse>
           </Container>
         </Navbar>
-      </>
+      </Fragment>
     );
   }
 }

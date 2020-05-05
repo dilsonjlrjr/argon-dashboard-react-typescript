@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React, { Fragment } from "react";
 
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
@@ -23,7 +23,7 @@ import { Button, Container, Row, Col } from "reactstrap";
 class UserHeader extends React.Component {
   render() {
     return (
-      <>
+      <Fragment>
         <div
           className="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
           style={{
@@ -56,7 +56,7 @@ class UserHeader extends React.Component {
             </Row>
           </Container>
         </div>
-      </>
+      </Fragment>
     );
   }
 }

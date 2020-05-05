@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React, { Fragment } from "react";
 
 // reactstrap components
 import { Card, CardBody, CardTitle, Container, Row, Col } from "reactstrap";
@@ -23,7 +23,7 @@ import { Card, CardBody, CardTitle, Container, Row, Col } from "reactstrap";
 class Header extends React.Component {
   render() {
     return (
-      <>
+      <Fragment>
         <div className="header bg-gradient-info pb-8 pt-5 pt-md-8">
           <Container fluid>
             <div className="header-body">
@@ -151,7 +151,7 @@ class Header extends React.Component {
             </div>
           </Container>
         </div>
-      </>
+      </Fragment>
     );
   }
 }

@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React , { Fragment } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 // reactstrap components
 import { Container } from "reactstrap";
@@ -24,21 +24,38 @@ import AdminNavbar from "../components/Navbars/AdminNavbar";
 import AdminFooter from "../components/Footers/AdminFooter";
 import Sidebar from "../components/Sidebar/Sidebar";
 
-import routes from "../routes.ts";
+import routes from "../routes";
 
-class Admin extends React.Component {
-  componentDidUpdate(e) {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    this.refs.mainContent.scrollTop = 0;
+interface RouteInterface {
+  path: string;
+  name: string;
+  icon: string;
+  component: any;
+  layout: string;
+}
+
+interface PropsInterface {
+  location: any;
+  layout: string;
+  path: string;
+  icon: string;
+  bgColor: string;
+  routes: Array<RouteInterface>;
+  name: string;
+}
+
+class Admin extends React.Component<PropsInterface> {
+  componentDidUpdate() {
+    document.documentElement.scrollTop = 0
   }
-  getRoutes = routes => {
-    return routes.map((prop, key) => {
+
+  getRoutes = (routes: Array<RouteInterface>) => {
+    return routes.map((prop: RouteInterface, key) => {
       if (prop.layout === "/admin") {
         return (
           <Route
-            path={prop.layout + prop.path}
-            component={prop.component}
+            path={ prop.layout.concat(prop.path.toString()) }
+            component={ prop.component }
             key={key}
           />
         );
@@ -47,7 +64,8 @@ class Admin extends React.Component {
       }
     });
   };
-  getBrandText = path => {
+  
+  getBrandText = (path: string) => {
     for (let i = 0; i < routes.length; i++) {
       if (
         this.props.location.pathname.indexOf(
@@ -59,9 +77,10 @@ class Admin extends React.Component {
     }
     return "Brand";
   };
+
   render() {
     return (
-      <>
+      <Fragment>
         <Sidebar
           {...this.props}
           routes={routes}
@@ -84,7 +103,7 @@ class Admin extends React.Component {
             <AdminFooter />
           </Container>
         </div>
-      </>
+      </Fragment>
     );
   }
 }

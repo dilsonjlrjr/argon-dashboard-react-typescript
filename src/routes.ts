@@ -27,7 +27,7 @@ interface RouteInterface {
   path: string
   name: string
   icon: string
-  component: Object
+  component: any
   layout: string
 }
 

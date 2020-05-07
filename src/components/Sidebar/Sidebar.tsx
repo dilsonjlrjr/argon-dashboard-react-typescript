@@ -21,11 +21,6 @@ import { NavLink as NavLinkRRD, Link } from "react-router-dom";
 
 // reactstrap components
 import {
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardTitle,
   Collapse,
   DropdownMenu,
   DropdownItem,
@@ -42,30 +37,14 @@ import {
   NavItem,
   NavLink,
   Nav,
-  Progress,
-  Table,
   Container,
   Row,
   Col,
   NavbarBrand,
 } from "reactstrap";
+import { RouteInterface, LogoInterface } from "global-interfaces";
 
 var ps;
-
-interface LogoInterface {
-  outterLink?: string;
-  innerLink: string;
-  imgAlt: string;
-  imgSrc: string;
-}
-
-interface RouteInterface {
-  path: string;
-  name: string;
-  icon: string;
-  component: any;
-  layout: string;
-}
 
 interface PropsInterface {
   location: any;
@@ -86,15 +65,14 @@ class Sidebar extends React.Component<PropsInterface, StateInterface> {
   state: StateInterface;
 
   constructor(props: PropsInterface) {
-    super(props);
-    this.activeRoute.bind(this);
+    super(props);    
 
     this.state = {
       collapseOpen: false,
     };
   }
   // verifies if routeName is the one active (in browser input)
-  activeRoute(routeName: String) {
+  activeRoute = (routeName: String) => {
     return this.props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
   }
   // toggles collapse between opened and closed (true/false)

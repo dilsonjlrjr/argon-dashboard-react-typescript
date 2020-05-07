@@ -25,14 +25,7 @@ import AdminFooter from "../components/Footers/AdminFooter";
 import Sidebar from "../components/Sidebar/Sidebar";
 
 import routes from "../routes";
-
-interface RouteInterface {
-  path: string;
-  name: string;
-  icon: string;
-  component: any;
-  layout: string;
-}
+import { RouteInterface } from "global-interfaces";
 
 interface PropsInterface {
   location: any;

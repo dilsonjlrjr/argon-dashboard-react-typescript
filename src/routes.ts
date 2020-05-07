@@ -22,14 +22,7 @@ import Register from "./views/examples/Register.js";
 import Login from "./views/examples/Login.js";
 import Tables from "./views/examples/Tables.js";
 import Icons from "./views/examples/Icons.js";
-
-interface RouteInterface {
-  path: string
-  name: string
-  icon: string
-  component: any
-  layout: string
-}
+import { RouteInterface } from "global-interfaces.js";
 
 let routes: Array<RouteInterface> = [
   {

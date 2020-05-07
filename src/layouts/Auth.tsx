@@ -24,7 +24,8 @@ import { Container, Row, Col } from "reactstrap";
 import AuthNavbar from "../components/Navbars/AuthNavbar";
 import AuthFooter from "../components/Footers/AuthFooter";
 
-import routes from "routes.ts";
+import routes from "routes"
+import { RouteInterface } from "global-interfaces";
 
 class Auth extends React.Component {
   componentDidMount() {
@@ -33,8 +34,8 @@ class Auth extends React.Component {
   componentWillUnmount() {
     document.body.classList.remove("bg-default");
   }
-  getRoutes = routes => {
-    return routes.map((prop, key) => {
+  getRoutes = (routes: Array<RouteInterface>) => {
+    return routes.map((prop: RouteInterface, key) => {
       if (prop.layout === "/auth") {
         return (
           <Route

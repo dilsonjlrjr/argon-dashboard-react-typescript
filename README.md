@@ -1,4 +1,4 @@
-# [Argon Dashboard React](https://demos.creative-tim.com/argon-dashboard-react?ref=adr-github-readme) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/home?status=Argon%20Dashboard%20is%20a%20Free%20Bootstrap%204,%20React%20and%20Reactstrap%20Dashboard%20made%20using%20create-react-app%20%E2%9D%A4%EF%B8%8F%0Ahttps%3A//demos.creative-tim.com/argon-dashboard-react%20%23react%20%23reactstrap%20%23createreactapp%20%23argon%20%23argondesign%20%23reactdashboard%20%23argonreact%20%23reactdesign%20%23bootstrap%20%23material%20%23design%20%23uikit%20%23freebie%20%20via%20%40CreativeTim)
+# [Argon Dashboard React TypeScript](https://demos.creative-tim.com/argon-dashboard-react?ref=adr-github-readme) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/home?status=Argon%20Dashboard%20is%20a%20Free%20Bootstrap%204,%20React%20and%20Reactstrap%20Dashboard%20made%20using%20create-react-app%20%E2%9D%A4%EF%B8%8F%0Ahttps%3A//demos.creative-tim.com/argon-dashboard-react%20%23react%20%23reactstrap%20%23createreactapp%20%23argon%20%23argondesign%20%23reactdashboard%20%23argonreact%20%23reactdesign%20%23bootstrap%20%23material%20%23design%20%23uikit%20%23freebie%20%20via%20%40CreativeTim)
 
 
  ![version](https://img.shields.io/badge/version-1.1.0-blue.svg)  ![license](https://img.shields.io/badge/license-MIT-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/argon-dashboard-react.svg?maxAge=2592000)](https://github.com/creativetimofficial/argon-dashboard-react/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/argon-dashboard-react.svg?maxAge=2592000)](https://github.com/creativetimofficial/argon-dashboard-react/issues?q=is%3Aissue+is%3Aclosed) [![Join the chat at https://gitter.im/NIT-dgp/General](https://badges.gitter.im/NIT-dgp/General.svg)](https://gitter.im/creative-tim-general/Lobby) [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/E4aHAQy)
@@ -69,11 +69,9 @@ If you want to get inspiration or just show something directly to your clients, 
 
 ## Quick start
 
-- `npm i argon-dashboard-react`
-- [Download from Github](https://github.com/creativetimofficial/argon-dashboard-react/archive/master.zip).
-- [Download from Creative Tim](https://www.creative-tim.com/product/argon-dashboard-react?ref=adr-github-readme).
-- Install with [Bower](https://bower.io/?ref=creativetim): ```bower install argon-dashboard-react```.
-- Clone the repo: `git clone https://github.com/creativetimofficial/argon-dashboard-react.git`.
+- [Download from Github](https://github.com/dilsonjlrjr/argon-dashboard-react-typescript/archive/master.zip).
+- [Project GitHUB](https://github.com/dilsonjlrjr/argon-dashboard-react-typescript).
+- Clone the repo: `git clone https://github.com/dilsonjlrjr/argon-dashboard-react-typescript.git`.
 
 
 ## Documentation
@@ -165,32 +163,32 @@ Argon Dashboard React
     │           └── fonts
     ├── components
     │   ├── Footers
-    │   │   ├── AdminFooter.jsx
-    │   │   └── AuthFooter.jsx
+    │   │   ├── AdminFooter.tsx
+    │   │   └── AuthFooter.tsx
     │   ├── Headers
-    │   │   ├── Header.jsx
-    │   │   └── UserHeader.jsx
+    │   │   ├── Header.tsx
+    │   │   └── UserHeader.tsx
     │   ├── Navbars
-    │   │   ├── AdminNavbar.jsx
-    │   │   └── AuthNavbar.jsx
+    │   │   ├── AdminNavbar.tsx
+    │   │   └── AuthNavbar.tsx
     │   └── Sidebar
-    │       └── Sidebar.jsx
+    │       └── Sidebar.tsx
     ├── index.js
     ├── layouts
-    │   ├── Admin.jsx
-    │   └── Auth.jsx
+    │   ├── Admin.tsx
+    │   └── Auth.tsx
     ├── routes.ts
     ├── variables
-    │   └── charts.jsx
+    │   └── charts.js
     └── views
-        ├── Index.jsx
+        ├── Dashboard.tsx
         └── examples
-            ├── Icons.jsx
-            ├── Login.jsx
-            ├── Maps.jsx
-            ├── Profile.jsx
-            ├── Register.jsx
-            └── Tables.jsx
+            ├── Icons.tsx
+            ├── Login.tsx
+            ├── Maps.tsx
+            ├── Profile.tsx
+            ├── Register.tsx
+            └── Tables.tsx
 ```
 
 

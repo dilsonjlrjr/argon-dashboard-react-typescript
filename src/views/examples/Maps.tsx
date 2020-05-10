@@ -30,8 +30,9 @@ import { Card, Container, Row } from "reactstrap";
 // core components
 import Header from "components/Headers/Header";
 // mapTypeId={google.maps.MapTypeId.ROADMAP}
+
 const MapWrapper = withScriptjs(
-  withGoogleMap(props => (
+  withGoogleMap((props: any) => (
     <GoogleMap
       defaultZoom={12}
       defaultCenter={{ lat: 40.748817, lng: -73.985428 }}

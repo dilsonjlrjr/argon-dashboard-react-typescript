@@ -31,8 +31,22 @@ import {
 // core components
 import Header from "components/Headers/Header";
 
-class Icons extends React.Component {
-  state = {};
+interface PropsInterface {}
+
+interface StateInterface {
+  copiedText: string
+}
+
+class Icons extends React.Component<PropsInterface, StateInterface> {
+
+  constructor(props: PropsInterface) {
+    super(props)
+
+    this.state = {
+      copiedText: ""
+    }
+  }
+
   render() {
     return (
       <>

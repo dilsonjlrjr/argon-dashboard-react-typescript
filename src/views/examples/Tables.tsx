@@ -827,8 +827,7 @@ class Tables extends React.Component {
                       <PaginationItem className="disabled">
                         <PaginationLink
                           href="#pablo"
-                          onClick={e => e.preventDefault()}
-                          tabIndex="-1"
+                          onClick={e => e.preventDefault()}                          
                         >
                           <i className="fas fa-angle-left" />
                           <span className="sr-only">Previous</span>

@@ -19,7 +19,7 @@ import React from "react";
 // node.js library that concatenates classes (strings)
 import classnames from "classnames";
 // javascipt plugin for creating charts
-import Chart from "chart.js";
+import Chart from "../variables/charts";
 // react plugin used to create charts
 import { Line, Bar } from "react-chartjs-2";
 // reactstrap components
@@ -48,19 +48,34 @@ import {
 
 import Header from "components/Headers/Header";
 
-class Index extends React.Component {
-  constructor(props){
+interface PropsDashboard {}
+interface StateDashboard {
+  activeNav: number,
+  chartExample1Data: string
+}
+
+declare global {
+  interface Window {
+      Chart:any;
+  }
+}
+
+class Dashboard extends React.Component<PropsDashboard, StateDashboard> {
+  constructor(props: PropsDashboard){
     super(props);
     this.state = {
       activeNav: 1,
       chartExample1Data: "data1"
     };
+    let Chart = window.Chart;
     if (window.Chart) {
       parseOptions(Chart, chartOptions());
     }
   }
-  toggleNavs = (e, index) => {
+
+  toggleNavs = (e: any, index: number) => {
     e.preventDefault();
+
     this.setState({
       activeNav: index,
       chartExample1Data:
@@ -92,7 +107,7 @@ class Index extends React.Component {
                               active: this.state.activeNav === 1
                             })}
                             href="#pablo"
-                            onClick={e => this.toggleNavs(e, 1)}
+                            onClick={(e: any) => this.toggleNavs(e, 1)}
                           >
                             <span className="d-none d-md-block">Month</span>
                             <span className="d-md-none">M</span>
@@ -119,7 +134,7 @@ class Index extends React.Component {
                   {/* Chart */}
                   <div className="chart">
                     <Line
-                      data={chartExample1[this.state.chartExample1Data]}
+                      data={chartExample1["data1"]}
                       options={chartExample1.options}
                       getDatasetAtEvent={e => console.log(e)}
                     />
@@ -345,4 +360,4 @@ class Index extends React.Component {
   }
 }
 
-export default Index;
+export default Dashboard;

@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import Index from "./views/Index.js";
+import Dashboard from "./views/Dashboard";
 import Profile from "./views/examples/Profile";
 import Maps from "./views/examples/Maps";
 import Register from "./views/examples/Register";
@@ -29,7 +29,7 @@ let routes: Array<RouteInterface> = [
     path: "/index",
     name: "Dashboard",
     icon: "ni ni-tv-2 text-primary",
-    component: Index,
+    component: Dashboard,
     layout: "/admin"
   },
   {
